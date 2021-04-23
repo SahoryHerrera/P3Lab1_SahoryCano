@@ -31,49 +31,56 @@ int main() {
 				cout << "Ingrese un numero: ";
 			   	cin >> n;
 			   	
+				while(n < 0){
+					cout<< "Ingrese un numero valido positivo: ";
+					cin >> n;
+					}//Fin while validacion
+					
 			   	for (int i = 0; i < n; i++) {
-       			 for (int j = 0; j < n; j++) {
-           			 if(i % 2 == 0){
-               	 if(j % 2 == 0){
-                    cout << "0 ";
-                } else{
-                    cout << "1 ";
-                }//fin else
-          		  } else{
-                 if(j % 2 == 0){
-                    cout << "1 ";
-                } else{
-                    cout << "0 ";
-                }//fin else
-          	  }//fin else
-       		 }//fin for
-       		 cout << "\n";
-    		}//fin for
-		
-			
+       			for (int j = 0; j < n; j++) {
+           		 if(i % 2 == 0){
+               		if(j % 2 == 0){
+                  		cout << "0 ";
+              			} else{
+                    	cout << "1 ";
+              			}//fin else
+          	   	 	 } else{
+               		 if(j % 2 == 0){
+                 	 	  cout << "1 ";
+               		 } else{
+                  		  cout << "0 ";
+               		 }//fin else
+               		 
+          		  }//fin else
+       			 }//fin for
+       			 cout << "\n";
+    			}//fin for
+
 				break;
-			}
+			}//fin case #1
 				
 			case 2:
 			{//Dado el valor de n por el usuario, calcule:
-			
-			       double n = 0;
-					cout<< "Ingrese limite: ";
+			      
+					cout<< "Ingrese el limite: ";
 					int lim = 0;
 					cin >> lim;
-					while(lim < 0){
-					cout<< "Ingrese limite: ";
-					cin >> lim;
-					}
 					
+					while(lim < 0){
+					cout<< "Ingrese un numero positivo: ";
+					cin >> lim;
+					}//Fin while validacion
+					
+					double n = 0;
 		  			for(int i = 1; i <= lim;i++){
-					int j = i - 1;
-					int k = i * 2;
-					int l = j * k;
-					n += l;
+					int multi_1 = i - 1;
+					int multi_2 = i * 2;
+					int resultado = multi_1 * multi_2;
+					n +=resultado;
 				
 			}
-			cout<< "El resultado es: " << n <<endl;
+			cout<< "El resultado de la sumatoria es: " << n <<endl;
+			cout << endl;
 	
 				break;	
 			}//Fin case 2
@@ -84,31 +91,41 @@ int main() {
 			double n = 0;
 			int t = 0;
 			
-				cout << "Ingrese el valor de Numero 1: ";
-			    cin >> n;
-			    cout << endl;
-			    cout << "Ingrese el valor de Numero 2: ";
-			    cin >> t;
+				 	cout << "Ingrese el valor de Numero 1: ";
+			   		cin >> n;
+			   		while(n < 0){
+					cout<< "Ingrese un numero valido positivo: ";
+					cin >> n;
+					}//Fin while validacion
+			   		
+			   		
+			   		cout << endl;
+			        cout << "Ingrese el valor de Numero 2: ";
+			        cin >> t;
+			        while(t < 11){
+					cout<< "Ingrese un numero Mayor que 10: ";
+					cin >> t;
+					}//Fin while validacion
 			
-			double max = n, mitad = 0.0, fin = n, inicio = 0.0;
-    mitad =((fin - inicio) / 2) + inicio;
-    for (int i = 1; i < t; i++) {
-        if (mitad * mitad > n) {
-            max = mitad;
-            fin = max;
-        } else {
-            fin = max;
-            inicio = mitad;
-        }
-        cout << "max " << max << endl;
-        cout << "fin " << fin << endl;
-        cout << "inicio " << inicio << endl;
-        cout << "mitad " << mitad << endl << endl;
-        mitad = ((fin - inicio) / 2) + inicio;
-    }
+					double max = n, mitad = 0.0, fin = n, inicio = 0.0;
+        		    mitad =((fin - inicio) / 2) + inicio;
+           			 for (int i = 1; i < t; i++) {
+        		   		 if (mitad * mitad > n) {
+          			  max = mitad;
+          			  fin = max;
+         		   } else {
+          			  fin = max;
+            			inicio = mitad;
+          		  }
+        		   cout << "max " << max << endl;
+         		   cout << "fin " << fin << endl;
+                   cout << "inicio " << inicio << endl;
+                   cout << "mitad " << mitad << endl << endl;
+                   mitad = ((fin - inicio) / 2) + inicio;
+                  }
 
-				break;	
-			}
+			    	break;	
+		    	}
 			
 							
 			case 4:
